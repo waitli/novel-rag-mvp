@@ -1,0 +1,15 @@
+services:
+  novel-rag-api:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      DATABASE_PATH: /data/novel_rag.sqlite3
+      LLM_BASE_URL: ${LLM_BASE_URL:-}
+      LLM_API_KEY: ${LLM_API_KEY:-}
+      LLM_MODEL: ${LLM_MODEL:-}
+    volumes:
+      - novel-rag-data:/data
+
+volumes:
+  novel-rag-data:
