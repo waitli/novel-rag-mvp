@@ -38,7 +38,7 @@ def outline_prompt(project: dict) -> str:
 类型：{project.get("genre", "")}
 章节数：{project.get("target_chapters")}
 故事圣经：
-{json.dumps(project.get("story_bible", {{}}), ensure_ascii=False, indent=2)}
+{json.dumps(project.get("story_bible", {}), ensure_ascii=False, indent=2)}
 
 输出格式必须为 Markdown，每章使用如下格式：
 ## 第 N 章：标题
@@ -64,7 +64,7 @@ def chapter_prompt(project: dict, chapter: dict, context: str, user_instruction:
 风格要求：{project.get("style_guide", "")}
 
 # 故事圣经
-{json.dumps(project.get("story_bible", {{}}), ensure_ascii=False, indent=2)}
+{json.dumps(project.get("story_bible", {}), ensure_ascii=False, indent=2)}
 
 # 本章大纲
 标题：{chapter.get("title", "")}
